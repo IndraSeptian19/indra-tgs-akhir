@@ -1,0 +1,108 @@
+
+<html>
+    <head>
+        
+        <title>ISAF</title>
+           <!-- UIkit CSS -->
+           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/css/uikit.min.css" />
+
+           <!-- UIkit JS -->
+           <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/js/uikit.min.js"></script>
+           <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/js/uikit-icons.min.js"></script>
+       
+    </head>
+    <body>
+
+
+        <div class="uk-margin">
+
+            <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="autoplay:true; animation: push;">
+                <ul class="uk-slideshow-items">
+                    
+                    <li>
+                        <div class="uk-position-cover uk-background-contain uk-flex uk-flex-center uk-flex-middle uk-transform-origin-center-left uk-text-center" data-src="/jawa/media/1.png" uk-img>
+                            
+                            
+
+                           
+                            
+                        </div>
+                    </li>
+                    <li>
+                        <div class="uk-position-cover  uk-transform-origin-top-right">
+                            <img src="/jawa/media/2.png" alt="" uk-cover>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="uk-position-cover  uk-transform-origin-top-right">
+                            <img src="/jawa/media/3.png" alt="" uk-cover>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="uk-position-cover  uk-transform-origin-top-right">
+                            <img src="/jawa/media/4.png" alt="" uk-cover>
+                        </div>
+                    </li>
+            
+                </ul>
+                <div class="uk-position-top uk-padding">
+                    <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+                        <div class="uk-navbar-left">
+                        <ul class="uk-navbar-nav">
+                            <li class="uk-navbar-item uk-active uk-navbar-brand"><a href=''>IndraxJawa</a></li>
+                            <li class="uk-navbar-item">Orbit AI jago AI</li>
+
+                        </ul>
+                        </div>
+                        </nav>
+                        </div>
+                <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+                <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+        </div>
+        <div class ='uk-container uk-margin-top'>
+            <p class="uk-text-large uk-text-italic uk-text-primary uk-text-bold">Orbit AI Mastery</p>
+
+            {% if prediksi_aksara_jawa %}
+        <a href="/jawa{{prediksi_aksara_jawa}}"><img src="/jawa{{prediksi_aksara_jawa}}" class="imageClipLayar img-fluid mh-50 mw-50" /></a>
+         <p>Gambar tersebut memiliki arti:</p>
+         
+         {% for i in ekstrak %}
+         <strong>{{i.name}}</strong>
+         {% endfor %}
+        <p>Unggah lagi?<br/><a href="/jawa/detek">klik disini</a></p>
+    {% else %}
+        Untuk predik aksara silakan gunakan tombol unggah diatas atau dibawah ini.
+        <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          {{ aksara }}
+          <button class="uk-button uk-button-primary uk-margin-top" type="submit">UNGGAH</button>
+        </form>
+    {% endif %}
+
+        </div>
+    </div>
+    </body>
+    <footer>
+        <div class="uk-text-white uk-width-expand uk-background-muted uk-container uk-grid-row uk-width-1-1 text-white uk-margin-top">
+            <div class='uk-padding uk-grid uk-grid-large uk-grid-col uk-margin-top'>
+                <div class=>
+                    <a class='uk-text-bold uk-text-large'>ISAF</a><br/>Suatu website yang asik<br/>
+                    </div>
+                <div ><p class='uk-text-bold'>Customer Service</p>
+
+                </div>
+                <div ><p class='uk-text-bold'>Information</p>
+                    <p><a class= "uk-link-text" href="">About Us</a></p>
+                    <p><a class="uk-link-text" href="">FAQ</a></p>
+                    <p><a class="uk-link-text" href="">Terms and Agreement</a></p>
+                </div>
+                <div ><p class='uk-text-bold'>Dimanakah kita?</p>
+                    <p>Di UPI</p>
+                </div>
+                <p>Copyright &copy 2022 Indra! - All Right Reserved</p>
+            </div>
+                
+            </div>
+        </footer>
+
+</html>
